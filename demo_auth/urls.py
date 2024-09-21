@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ui import views
+from customer import views as vc
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage),
     path('auth/signup', views.register),
+    path('auth/add', vc.add_user),
 ]
