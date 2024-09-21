@@ -39,3 +39,16 @@ def logout(req):
     auth.logout(req)
     return render(request=req,
                   template_name='profile.html')
+
+def login(req):
+    usr = req.POST.get('userid')
+    pwd = req.POST.get('password')
+    user = auth.authenticate(username=usr, password=pwd)
+    if user:
+        auth.login(req, user)
+        return render(request=req, template_name='profile.html')
+    else:
+        # for login fails
+        return render(request=req, 
+                      template_name='index.html',
+                      context={'msg': 'Login Failed'})

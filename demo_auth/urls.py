@@ -25,4 +25,5 @@ urlpatterns = [
     path('auth/signup', views.register),
     path('auth/add', vc.add_user),
     path('auth/logout', vc.logout),
+    path('auth/login', vc.login),
 ]
