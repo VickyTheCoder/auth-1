@@ -35,3 +35,7 @@ def add_user(req):
                               template_name='signup.html',
                               context={'msg': error})
     
+def logout(req):
+    auth.logout(req)
+    return render(request=req,
+                  template_name='profile.html')
