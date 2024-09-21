@@ -7,3 +7,9 @@ def homepage(req):
         return render(request=req,
                       template_name='index.html')
     raise Http404("Invalid Request")
+
+def register(req):
+    if req.method == 'GET':
+        return render(request=req,
+                      template_name='signup.html')
+    raise Http404("Invalid Request")
